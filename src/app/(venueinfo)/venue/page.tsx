@@ -1,10 +1,12 @@
-import CardPanel from "@/components/CardPanel";
+import VenueCatalog from "@/components/VenueCatalog";
+import getVenues from "@/libs/getVenues";
 
-export default function Page() {
+export default async function Page() {
+  const venues = await getVenues();
   return (
     <div>
       <main className="!mt-20">
-        <CardPanel/>
+        <VenueCatalog venuesJson={venues}/>
       </main>
     </div>
   );
